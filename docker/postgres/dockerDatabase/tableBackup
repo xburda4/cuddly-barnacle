@@ -59,8 +59,8 @@ ALTER TABLE public.binarydatatable OWNER TO postgres;
 --
 
 COPY public.binarydatatable (id, binarydata, expiration) FROM stdin;
-key_1	YXdlc29tZSB0ZXh0	2020-08-24 15:32:41
-mahKey	aGlkZGVuIGVhc3RlciBlZ2c=	2020-08-24 18:32:41
+key_1	YXdlc29tZSB0ZXh0	1598299239
+mahKey	aGlkZGVuIGVhc3RlciBlZ2c=	1598300239
 \.
 
 

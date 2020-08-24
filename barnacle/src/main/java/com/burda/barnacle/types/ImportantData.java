@@ -1,5 +1,7 @@
 package com.burda.barnacle.types;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.AllArgsConstructor;
 import lombok.Value;
 
 import java.sql.Timestamp;
@@ -8,7 +10,9 @@ import java.util.Base64;
 import java.util.Calendar;
 
 @Value
+@AllArgsConstructor
 public class ImportantData {
+    @JsonProperty("key")
     String id;
     String binaryData;
     Timestamp expiration;

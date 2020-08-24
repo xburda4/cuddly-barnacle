@@ -2,16 +2,15 @@ package com.burda.barnacle.interfaces;
 
 import com.burda.barnacle.types.ImportantData;
 import com.fasterxml.jackson.databind.JsonNode;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public interface IDataController {
 
-    @PostMapping("/save")
-    String saveDataToDatabase(@RequestBody ImportantData inputData);
+    @RequestMapping(value = "/save", produces = MediaType.APPLICATION_JSON_VALUE, method = RequestMethod.POST)
+    ImportantData saveDataToDatabase(@RequestBody ImportantData inputData);
 
-    @PostMapping("/get")
-    String getDataFromDatabase(@RequestBody JsonNode jsonNode);
+    @RequestMapping(value = "/get", produces =  MediaType.APPLICATION_JSON_VALUE, method = RequestMethod.POST)
+    ImportantData getDataFromDatabase(@RequestBody JsonNode jsonNode);
 }
